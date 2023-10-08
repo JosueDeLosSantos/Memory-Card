@@ -1,4 +1,4 @@
-const photos = [
+const naturePics = [
 	{
 		id: 18518016,
 		width: 3672,
@@ -376,8 +376,8 @@ const photos = [
 	},
 ]
 
-function photoList() {
-    return photos
+function photos() {
+    return naturePics
 }
 
-export default photoList()
+export default photos()
