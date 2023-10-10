@@ -36,10 +36,6 @@
 	height: fit-content;
 }
 
-/* .scoresTypography {
-    font-size: clamp(0.4rem, 1rem, 1.1rem) !important;
-} */
-
 @media (max-width: 600px) {
 	.toolbar,
 	.gameLogo {
@@ -53,7 +49,8 @@
 }
 
 @media (max-width: 280px) {
-	.scoresTypography, .insideBox {
+	.scoresTypography,
+	.insideBox {
 		font-size: 0.9rem !important;
 	}
 }
