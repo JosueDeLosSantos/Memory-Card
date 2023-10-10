@@ -1,3 +1,6 @@
+.img-list-item:hover {
+	box-shadow: 0px 0px 0px 5px rgb(219, 219, 16);
+}
 .img-list-item:active {
 	box-shadow: 0px 0px 0px 5px rgb(219, 219, 16);
 }
