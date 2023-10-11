@@ -63,12 +63,21 @@
 	padding-top: clamp(9rem, calc(9rem + 5vw), 11rem) !important;
 }
 
+.instructionsTypo,
 .modalTypo {
 	color: white;
-	font-size: clamp(1.5rem, calc(1.5rem + 2vw), 2.5rem) !important;
-	font-family: Patrick_Hand !important;
 	margin-bottom: clamp(2rem, calc(2rem + 5vw), 4rem) !important;
 	text-align: center;
+}
+
+.modalTypo {
+	font-size: clamp(1.5rem, calc(1.5rem + 2vw), 2.5rem) !important;
+	font-family: Patrick_Hand !important;
+}
+
+.instructionsTypo {
+	font-size: clamp(1rem, calc(1rem + 2vw), 2rem) !important;
+	font-family: Josefin !important;
 }
 
 .ModalBox {
@@ -76,13 +85,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: 600px;
+	min-width: 240px;
 }
 
 .modalBtnGroup > button:not(:last-child) {
 	border-bottom: 1px solid rgb(41, 46, 75) !important;
 }
 
-.modalBtnGroup > button {
+.modalBtnGroup > button,
+.instructionsBtnBox {
 	font-size: clamp(0.7rem, calc(0.7rem + 1vw), 1.2rem) !important;
 }
 

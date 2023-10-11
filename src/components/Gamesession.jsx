@@ -6,8 +6,6 @@ import {
 	ImageListItemBar,
 	useMediaQuery,
 	Modal,
-	MenuItem,
-	Menu,
 	Box,
 	Typography,
 	Button,
@@ -16,7 +14,17 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 
 export default function Gamesession({ photoList, handleIdStore }) {
-	const [open, setOpen] = useState(true)
+	const [open, setOpen] = useState(false)
+	const [instructions, setInstructions] = useState(true)
+
+	const handleInstructions = () => {
+		setInstructions(false)
+		setOpen(true)
+	}
+
+	const handleOpen = () => {
+		setOpen(false)
+	}
 
 	const imgStyles = {
 		height: "calc(100px + 5vw)",
@@ -53,11 +61,31 @@ export default function Gamesession({ photoList, handleIdStore }) {
 		},
 	})
 
-	if (open) {
+	if (instructions && !open) {
+		return (
+			<ThemeProvider theme={theme}>
+				<Modal className="Modal" open={instructions}>
+					<Box sx={{ p: 1}} className="ModalBox">
+						<Box>
+							<Typography className="instructionsTypo">
+								The more cards you select without repeating their selection, the
+								more points you will score!
+							</Typography>
+						</Box>
+						<Box className="instructionsBtnBox">
+							<Button onClick={handleInstructions} variant="contained" color="secondary">
+								OK
+							</Button>
+						</Box>
+					</Box>
+				</Modal>
+			</ThemeProvider>
+		)
+	} else if (!instructions && open) {
 		return (
 			<ThemeProvider theme={theme}>
 				<Modal className="Modal" open={open}>
-					<Box className="ModalBox">
+					<Box sx={{ p: 1 }} className="ModalBox">
 						<Box>
 							<Typography className="modalTypo">
 								Select your difficulty level:
@@ -70,17 +98,17 @@ export default function Gamesession({ photoList, handleIdStore }) {
 								orientation="vertical"
 								className="modalBtnGroup"
 							>
-								<Button>Easy</Button>
-								<Button>Normal</Button>
-								<Button>Difficult</Button>
-								<Button>Insane</Button>
+								<Button onClick={handleOpen}>Easy</Button>
+								<Button onClick={handleOpen}>Normal</Button>
+								<Button onClick={handleOpen}>Difficult</Button>
+								<Button onClick={handleOpen}>Insane</Button>
 							</ButtonGroup>
 						</Box>
 					</Box>
 				</Modal>
 			</ThemeProvider>
 		)
-	} else {
+	} else if (!instructions && !open) {
 		return (
 			<ThemeProvider theme={theme}>
 				<Container style={containerStyles} maxWidth="sm">
