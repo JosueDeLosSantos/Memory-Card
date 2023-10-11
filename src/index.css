@@ -13,6 +13,16 @@
 	src: url("./assets/fonts/Poiret_One/PoiretOne-Regular.ttf");
 }
 
+@font-face {
+	font-family: Josefin;
+	src: url("./assets/fonts/Josefin_Slab/static/JosefinSlab-Bold.ttf");
+}
+
+@font-face {
+	font-family: Patrick_Hand;
+	src: url("./assets/fonts/Patrick_Hand/PatrickHand-Regular.ttf");
+}
+
 .gameBackground {
 	width: 100%;
 	height: 90vh;
@@ -26,8 +36,8 @@
 }
 
 .gameBackground img {
-	width: 10rem;
-	height: 10rem;
+	width: clamp(4rem, calc(4rem + 5vw), 10rem);
+	height: clamp(4rem, calc(4rem + 5vw), 10rem);
 }
 
 .brain {
