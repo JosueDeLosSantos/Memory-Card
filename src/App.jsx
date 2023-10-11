@@ -78,11 +78,11 @@ function App() {
 		}
 	})
 
-	/* function randomSort() {
+	function randomSort() {
 		return Math.random() - 0.5
 	}
 
-	photoList.sort(randomSort) */
+	photoList.sort(randomSort)
 
 	if (!playing) {
 		return (
