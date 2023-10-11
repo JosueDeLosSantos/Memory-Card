@@ -57,6 +57,40 @@
 	font-size: clamp(1rem, calc(1rem + 1vw), 2rem) !important;
 }
 
+.Modal {
+	display: flex;
+	justify-content: center;
+	padding-top: clamp(9rem, calc(9rem + 5vw), 11rem) !important;
+}
+
+.modalTypo {
+	color: white;
+	font-size: clamp(1.5rem, calc(1.5rem + 2vw), 2.5rem) !important;
+	font-family: Patrick_Hand !important;
+	margin-bottom: clamp(2rem, calc(2rem + 5vw), 4rem) !important;
+	text-align: center;
+}
+
+.ModalBox {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modalBtnGroup {
+	box-shadow: 0px 3px 1px -2px rgb(41, 46, 75), 0px 2px 2px 0px rgb(41, 46, 75),
+		0px 1px 5px 0px rgb(41, 46, 75) !important;
+}
+
+.modalBtnGroup > button:not(:last-child) {
+	border-bottom: 1px solid rgb(41, 46, 75) !important;
+}
+
+.modalBtnGroup > button {
+	font-size: clamp(0.7rem, calc(0.7rem + 1vw), 1.2rem) !important;
+}
+
 .img-list-item:hover {
 	box-shadow: 0px 0px 0px 5px rgb(219, 219, 16);
 }
