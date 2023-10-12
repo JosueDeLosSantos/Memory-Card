@@ -11,9 +11,9 @@ import {
 	Button,
 	ButtonGroup,
 } from "@mui/material"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { ThemeProvider } from "@mui/material/styles"
 
-export default function Gamesession({ photoList, handleIdStore }) {
+export default function Gamesession({ photoList, handleIdStore, handleDifficulty, theme }) {
 	const [open, setOpen] = useState(false)
 	const [instructions, setInstructions] = useState(true)
 
@@ -22,8 +22,9 @@ export default function Gamesession({ photoList, handleIdStore }) {
 		setOpen(true)
 	}
 
-	const handleOpen = () => {
+	const handleOpen = (e) => {
 		setOpen(false)
+		handleDifficulty(e.target.textContent)
 	}
 
 	const imgStyles = {
@@ -51,21 +52,11 @@ export default function Gamesession({ photoList, handleIdStore }) {
 	const matches = useMediaQuery("(max-width: 600px)")
 	const matchesSmall = useMediaQuery("(max-width: 350px)")
 
-	console.log(matchesSmall)
-
-	const theme = createTheme({
-		palette: {
-			secondary: {
-				main: "#5C6BC0",
-			},
-		},
-	})
-
 	if (instructions && !open) {
 		return (
 			<ThemeProvider theme={theme}>
 				<Modal className="Modal" open={instructions}>
-					<Box sx={{ p: 1}} className="ModalBox">
+					<Box sx={{ p: 1 }} className="ModalBox">
 						<Box>
 							<Typography className="instructionsTypo">
 								The more cards you select without repeating their selection, the
@@ -73,7 +64,11 @@ export default function Gamesession({ photoList, handleIdStore }) {
 							</Typography>
 						</Box>
 						<Box className="instructionsBtnBox">
-							<Button onClick={handleInstructions} variant="contained" color="secondary">
+							<Button
+								onClick={handleInstructions}
+								variant="contained"
+								color="secondary"
+							>
 								OK
 							</Button>
 						</Box>
@@ -101,7 +96,6 @@ export default function Gamesession({ photoList, handleIdStore }) {
 								<Button onClick={handleOpen}>Easy</Button>
 								<Button onClick={handleOpen}>Normal</Button>
 								<Button onClick={handleOpen}>Difficult</Button>
-								<Button onClick={handleOpen}>Insane</Button>
 							</ButtonGroup>
 						</Box>
 					</Box>
