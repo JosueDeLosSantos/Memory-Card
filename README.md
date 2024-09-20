@@ -24,7 +24,7 @@ See live preview at: https://memory-card-gold.vercel.app/
     ```
 2. Navigate to the project directory:
     ```bash
-    cd memory-card
+    cd Memory-Card
     ```
 3. Install dependencies:
     ```bash
